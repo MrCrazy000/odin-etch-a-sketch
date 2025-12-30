@@ -7,15 +7,27 @@ section.appendChild(newGridBtn)
 
 function createGrid(n) {
     const totalBlocks = n*n
+    let r = 0
+    let b = 0
+    let g = 0
 
     // loop for creating grid blocks and adding painting
     for (let i = 0; i<totalBlocks; i++) {
         const block = document.createElement('div');
+        block.dataset.darkness = 0
         block.style.width = `${960 / n}px`
         block.style.height = `${960 / n}px`
         container.appendChild(block)
+        // making rgb logic
         block.addEventListener('mouseover', () => {
-        block.style.backgroundColor = 'black'
+        dark = Number(block.dataset.darkness);
+        dark++
+        block.dataset.darkness = dark
+        block.style.opacity = dark * 0.1
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+        block.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
         })
     }
         
