@@ -1,6 +1,6 @@
 const container = document.querySelector('#container');
 const newGridBtn = document.createElement('button')
-const section = document.querySelector('#section')
+const section = document.querySelector('.bodyClass')
 newGridBtn.textContent = 'New grid';
 section.appendChild(newGridBtn)
 
